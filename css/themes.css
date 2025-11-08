@@ -1,0 +1,106 @@
+/* --- START OF NEW FILE themes.css --- */
+
+/* --- Keyframe Animations for Backgrounds --- */
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes subtle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes apple-aurora {
+    0% { background-position: 0% 0%; } 25% { background-position: 100% 0%; }
+    50% { background-position: 100% 100%; } 75% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* --- Default Theme Background --- */
+body.theme-default-bg .background-animation {
+    background: linear-gradient(-45deg, #e0e7ff, #c7d2fe, #a5b4fc, #818cf8);
+    background-size: 400% 400%; animation: gradient-shift 25s ease infinite;
+}
+
+/* --- Samsung Theme --- */
+body.theme-samsung-bg .background-animation {
+    background: linear-gradient(60deg, #0a2a5e, #0b4da1, #3f7fdb, #8bbfff);
+    background-size: 300% 300%; animation: gradient-shift 20s ease infinite;
+}
+body.theme-samsung-bg .background-animation::before,
+body.theme-samsung-bg .background-animation::after {
+    content: ''; position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.05);
+    animation: subtle-float 15s ease-in-out infinite; will-change: transform;
+}
+body.theme-samsung-bg .background-animation::before { width: 300px; height: 300px; top: 10%; left: 5%; animation-delay: 0s; }
+body.theme-samsung-bg .background-animation::after { width: 200px; height: 200px; bottom: 15%; right: 10%; animation-delay: 2s; }
+
+body.theme-samsung {
+    --primary-color: #0b4da1; --primary-color-dark: #083a7a; --secondary-color: #1d2d44;
+    --input-border-color: #d1d9e6; --text-color: #212529; --label-color: #495057;
+    --text-muted-color: #6c757d; --shadow-color: rgba(11, 77, 161, 0.08);
+    --shadow-hover-color: rgba(11, 77, 161, 0.12); --logo-color: var(--primary-color);
+}
+
+/* --- Xiaomi Theme --- */
+body.theme-xiaomi-bg .background-animation {
+     background: repeating-linear-gradient(-55deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 10px, rgba(255, 255, 255, 0.03) 10px, rgba(255, 255, 255, 0.03) 20px),
+        linear-gradient(135deg, #ff8a3c, #ff6900, #a14500);
+    background-size: 100% 100%; animation: gradient-shift 22s ease infinite;
+}
+body.theme-xiaomi {
+    --primary-color: #ff6900; --primary-color-dark: #e05a00; --secondary-color: #333333;
+    --input-border-color: #e0e0e0; --text-color: #333; --label-color: #555;
+    --text-muted-color: #757575; --shadow-color: rgba(255, 105, 0, 0.1);
+    --shadow-hover-color: rgba(255, 105, 0, 0.15); --logo-color: var(--primary-color);
+}
+
+/* --- Google Theme --- */
+body.theme-google-bg .background-animation {
+    background: linear-gradient(45deg, #e8f0fe, #d2e3fc, #adcffa, #8ab4f8);
+    background-size: 200% 200%; animation: gradient-shift 18s ease infinite;
+}
+body.theme-google-bg .background-animation::before {
+    content: ''; position: absolute; width: 0; height: 0; border-left: 150px solid transparent;
+    border-right: 150px solid transparent; border-bottom: 260px solid rgba(66, 133, 244, 0.08);
+    bottom: 5%; right: 5%; transform: rotate(-30deg); animation: subtle-float 20s ease-in-out infinite 1s; will-change: transform;
+}
+body.theme-google-bg .background-animation::after {
+     content: ''; position: absolute; width: 180px; height: 180px;
+    background: rgba(234, 67, 53, 0.06); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    top: 10%; left: 10%; animation: subtle-float 18s ease-in-out infinite reverse; will-change: transform;
+}
+body.theme-google {
+    --primary-color: #4285F4; --primary-color-dark: #1a73e8; --secondary-color: #202124;
+    --input-border-color: #dadce0; --text-color: #202124; --label-color: #5f6368;
+    --text-muted-color: #5f6368; --shadow-color: rgba(66, 133, 244, 0.1);
+    --shadow-hover-color: rgba(66, 133, 244, 0.15); --logo-color: #EA4335;
+}
+
+/* --- Apple Theme --- */
+body.theme-apple-bg .background-animation {
+    background: radial-gradient(circle at 10% 20%, hsla(210, 50%, 95%, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 80% 30%, hsla(280, 40%, 92%, 0.7) 0%, transparent 50%),
+                radial-gradient(circle at 30% 80%, hsla(190, 45%, 93%, 0.75) 0%, transparent 50%),
+                radial-gradient(circle at 90% 70%, hsla(30, 50%, 94%, 0.6) 0%, transparent 50%), #f9f9f9;
+    background-size: 300% 300%; animation: apple-aurora 45s linear infinite; will-change: background-position;
+}
+body.theme-apple {
+    --primary-color: #007aff; --primary-color-dark: #005ecb; --secondary-color: #1d1d1f;
+    --form-background: #ffffff; --text-color: #1d1d1f; --text-muted-color: #6e6e73;
+    --label-color: #3a3a3c; --input-border-color: #d2d2d7; --input-background: #f5f5f7;
+    --input-placeholder-color: #86868b; --link-hover-color: #006adc; --shadow-color: rgba(0, 0, 0, 0.05);
+    --shadow-hover-color: rgba(0, 0, 0, 0.08); --logo-color: #333333; --border-radius-sm: 6px; --border-radius-md: 10px;
+}
+body.theme-apple .form-box { padding: calc(var(--spacing-xl) + var(--spacing-xs)) calc(var(--spacing-xl) + var(--spacing-xs)); border-radius: var(--border-radius-md); }
+body.theme-apple .logo-placeholder { font-size: 3rem; }
+body.theme-apple .input-group input[type="text"],
+body.theme-apple .input-group input[type="email"],
+body.theme-apple .input-group input[type="password"],
+body.theme-apple .input-group input[type="date"] { background-color: var(--input-background); border-radius: var(--border-radius-sm); height: calc(var(--input-height) + 4px); }
+body.theme-apple .input-group input:focus { box-shadow: 0 0 0 3px color-mix(in srgb, var(--input-focus-border-color) 20%, transparent); }
+body.theme-apple .btn-submit { font-weight: 500; border-radius: var(--border-radius-sm); height: calc(var(--button-height) + 2px); }
+body.theme-apple #theme-menu button:hover { background-color: color-mix(in srgb, var(--primary-color) 10%, var(--form-background)); color: var(--primary-color); }
+body.theme-apple #theme-menu button:hover i { color: var(--primary-color); }
+body.theme-apple #theme-trigger { background-color: rgba(0, 0, 0, 0.05); color: var(--secondary-color); }
+body.theme-apple #theme-trigger:hover { background-color: rgba(0, 0, 0, 0.1); }
