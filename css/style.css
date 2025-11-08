@@ -1,3 +1,4 @@
+
 /* --- START OF FILE style.css --- */
 
 /* Basic Reset */
@@ -25,6 +26,12 @@ html { font-size: 16px; scroll-behavior: smooth; }
 body {
     font-family: var(--font-family); color: var(--text-color); line-height: 1.6;
     min-height: 100vh; overflow-x: hidden; position: relative;
+
+    /* ADDED: Prevent text selection across the page for a cleaner UI */
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
 }
 .background-animation {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -59,6 +66,15 @@ h1 { font-size: 1.75rem; color: var(--secondary-color); margin-bottom: var(--spa
 .input-group input[type="text"], .input-group input[type="email"], .input-group input[type="password"], .input-group input[type="date"] { width: 100%; height: var(--input-height); padding: 0 var(--spacing-md); border: 1px solid var(--input-border-color); border-radius: var(--border-radius-sm); font-size: 0.95rem; background-color: var(--input-background); color: var(--text-color); transition: border-color 0.3s ease, background-color 0.4s ease, color 0.4s ease, box-shadow 0.3s ease; }
 .input-group input::placeholder { color: var(--input-placeholder-color); opacity: 1; }
 .input-group input:focus { outline: none; border-color: var(--input-focus-border-color); box-shadow: 0 0 0 3px color-mix(in srgb, var(--input-focus-border-color) 15%, transparent); }
+
+/* ADDED: Rule to ensure text within form inputs is still selectable */
+.input-group input[type="text"], .input-group input[type="email"], .input-group input[type="password"], .input-group input[type="date"] {
+    user-select: auto;
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+}
+
 .options { text-align: right; margin-bottom: var(--spacing-lg); margin-top: -var(--spacing-sm); }
 .link-subtle { color: var(--link-subtle-color); font-size: 0.875rem; text-decoration: none; transition: color 0.3s ease; }
 .link-subtle:hover { color: var(--link-subtle-hover-color); text-decoration: underline; }

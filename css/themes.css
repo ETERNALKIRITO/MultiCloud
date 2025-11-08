@@ -104,3 +104,57 @@ body.theme-apple #theme-menu button:hover { background-color: color-mix(in srgb,
 body.theme-apple #theme-menu button:hover i { color: var(--primary-color); }
 body.theme-apple #theme-trigger { background-color: rgba(0, 0, 0, 0.05); color: var(--secondary-color); }
 body.theme-apple #theme-trigger:hover { background-color: rgba(0, 0, 0, 0.1); }
+
+
+/* --- Roblox Theme --- */
+
+body.theme-roblox-bg .background-animation {
+    background: linear-gradient(135deg, #10121a, #1a1f2c, #10121a);
+    background-size: 200% 200%;
+    animation: gradient-shift 20s ease infinite;
+}
+
+body.theme-roblox {
+    --primary-color: #335FFF; /* Roblox Blue */
+    --primary-color-dark: #1d3eb7;
+    --secondary-color: #ffffff;
+    --form-background: #1c1c1e;
+    --text-color: #e1e1e3;
+    --text-muted-color: #8e8e93;
+    --label-color: #b0b0b5;
+    --input-border-color: #3a3a3c;
+    --input-focus-border-color: var(--primary-color);
+    --input-background: #2c2c2e;
+    --input-placeholder-color: #767678;
+    --link-color: var(--primary-color);
+    --link-hover-color: #33b7ff;
+    --logo-color: var(--primary-color);
+    --button-text-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --shadow-hover-color: rgba(0, 0, 0, 0.3);
+    --border-radius-md: 6px;
+}
+
+body.theme-roblox .form-box {
+    border: 1px solid #2a2a2c;
+}
+
+body.theme-roblox .fake-ad-container {
+    background-color: #212124;
+    border-color: #3a3a3c;
+}
+
+/* Invert the black ad logo to make it white on the dark background */
+body.theme-roblox .fake-ad-container .ad-logo {
+    filter: invert(1);
+    opacity: 0.9;
+}
+
+body.theme-roblox #theme-trigger {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #f0f0f0;
+}
+
+body.theme-roblox #theme-trigger:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
